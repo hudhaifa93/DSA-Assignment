@@ -313,6 +313,11 @@ public class MyMain extends javax.swing.JFrame {
 
     private void jbtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDeleteActionPerformed
         
+		 tree.delete(Integer.parseInt(jtxtSearchISBNNo.getText()));
+        System.out.println("Current Tree ===============================================");
+        tree.print();//Console Only
+        System.out.println("============================================================");
+		
     }//GEN-LAST:event_jbtnDeleteActionPerformed
 
     private void jbtnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRefreshActionPerformed
