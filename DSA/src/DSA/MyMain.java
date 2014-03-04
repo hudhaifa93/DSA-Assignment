@@ -294,6 +294,20 @@ public class MyMain extends javax.swing.JFrame {
 
     private void jbtnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSearchActionPerformed
         
+		jtxtSearchISBNNo.setText("");
+        jtxtSearchBookName.setText("");
+        jtxtSearchAuthorName.setText("");
+        jtxtSearchAuthorSurName.setText("");
+        
+        Node node = tree.searchByISBNNo(Integer.parseInt(jtxtSerachText.getText()));
+        jtxtSearchISBNNo.setText(Integer.toString(node.isbn));
+        jtxtSearchBookName.setText(node.title);
+        jtxtSearchAuthorName.setText(node.auther);
+        jtxtSearchAuthorSurName.setText(node.surname);
+        
+        System.out.println("Current Tree ===============================================");
+        tree.print(Integer.parseInt(jtxtSearchISBNNo.getText()));//Console Only
+        System.out.println("============================================================");
         
     }//GEN-LAST:event_jbtnSearchActionPerformed
 
