@@ -275,6 +275,21 @@ public class MyMain extends javax.swing.JFrame {
 
     private void jbtnInsertSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnInsertSaveActionPerformed
    
+   tree.add(Integer.parseInt(jtxtInsertISBNNo.getText()),jtxtInsertBookName.getText(),jtxtInsertAuthorName.getText(),jtxtAuthorSurName.getText());
+        
+        System.out.println("Entering Book Details ======================================");
+        tree.print(Integer.parseInt(jtxtInsertISBNNo.getText()));//Console Only
+        System.out.println("============================================================");
+        System.out.println("");
+        System.out.println("Current Tree ===============================================");
+        tree.print();//Console Only
+        System.out.println("============================================================");
+        
+        jtxtInsertISBNNo.setText("");
+        jtxtInsertBookName.setText("");
+        jtxtInsertAuthorName.setText("");
+        jtxtAuthorSurName.setText("");
+   
     }//GEN-LAST:event_jbtnInsertSaveActionPerformed
 
     private void jbtnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSearchActionPerformed
