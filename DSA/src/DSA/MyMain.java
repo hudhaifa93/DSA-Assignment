@@ -12,7 +12,7 @@ import sun.io.Converters;
  * @author Thwaraka Yogarajah
  */
 public class MyMain extends javax.swing.JFrame {
-   
+   BinaryTree tree = new BinaryTree();
 
     /**
      * Creates new form MyMain
@@ -287,9 +287,67 @@ public class MyMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnDeleteActionPerformed
 
     private void jbtnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRefreshActionPerformed
-       
+        Node fullNode = tree.getRoot();
+        printLevelOrderDFS(fullNode);
     }//GEN-LAST:event_jbtnRefreshActionPerformed
     
+	public void printLevelOrderDFS(Node root) {
+	    	
+	        int height = maxHeight(root);
+	        for (int i = 0; i < height; i++) {
+	        	
+	        	double indent = ((Math.pow(2, height-(i+1))-1)*2);
+	        	
+	        	for(int y =0;y<indent; y++ ){
+	     
+	        		
+	        	}
+	            printLevel(root, i , indent);
+	            
+	        }
+	    }
+	    
+    public void printLevel(Node node, int level,double height) {
+	    		    	int k = 0;
+	        if (node == null) {
+	        	for(int i = 0 ; i< (height*2) ; i++ ){
+	        		}
+	            return;
+	        }
+	        if (level == 0) 
+                {
+                    //jTable1.getModel().setValueAt("Book Name",k,5);
+                    
+                    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                    model.addRow(new Object[]{node.isbn,node.title,node.auther,node.surname});
+                    
+	            System.out.print(" "+node.isbn+" ");
+	            System.out.print(" "+node.title+" ");
+                    System.out.print(" "+node.auther+" ");
+                    System.out.print(" "+node.surname+" ");
+                    System.out.println("");
+                    k++;
+                    
+                    for(int i = 0 ; i< (height*2) ; i++ ){
+	        		}
+	            
+	        } if(level == 1){
+	        	
+	        }
+	        if (level != 0) {
+	            printLevel(node.leftChild, level - 1,height);
+	            printLevel(node.rightChild, level - 1,height);
+	        }	        
+	    }
+	    
+	    public int maxHeight(Node root) {
+	        if (root == null) {
+	            return 0;
+	        }
+	        return 1 + Math.max(maxHeight(root.leftChild), maxHeight(root.rightChild));
+	    }
+	
+	
     /**
      * @param args the command line arguments
      */
