@@ -256,8 +256,52 @@ public class BinaryTree {
 	        return minLeftTraversal(node.leftChild);
 	        
 	    }
+		
+		public Node searchByISBNNo(int val){
+	    	Node node = find(val);
+	    	return node;
+	    }
+		
+		private void inOrderTraversal(Node node) {
+	        
+	        if (node.leftChild != null) {
+	            
+	            inOrderTraversal(node.leftChild);
+	            
+	        }
+	        
+	        System.out.println(node.isbn);
+	        
+	        if (node.rightChild != null) {
+	            
+	            inOrderTraversal(node.rightChild);
+	            
+	        }
+	        
+	    }
 	    
-	    
+	    public Node searchByISBNNo(int val){
+	    	Node node = find(val);
+	    	return node;
+	    }
+		
+		private void inOrderTraversal(Node node) {
+	        
+	        if (node.leftChild != null) {
+	            
+	            inOrderTraversal(node.leftChild);
+	            
+	        }
+	        
+	        System.out.println(node.isbn);
+	        
+	        if (node.rightChild != null) {
+	            
+	            inOrderTraversal(node.rightChild);
+	            
+	        }
+	        
+	    }
 	    
 	    
 	    
