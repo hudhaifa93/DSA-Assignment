@@ -56,6 +56,50 @@ public class BinaryTree {
 	        }
 	        
 	    }
+		
+		public Node find(int val) {
+	    	
+	    	Node node = new Node();
+	        
+	        if (root != null) {
+	        	
+	             node =  findNode(root, new Node(val));
+	             
+	             return node;
+	             
+	           // System.out.println(node.isbn);
+	            
+	        }
+	        
+	        return null;
+	    }
+	    
+	    private Node findNode(Node search, Node node) {
+	        
+	        if (search == null) {
+	            
+	            return null;
+	        }
+	        
+	        if (search.isbn == node.isbn) {
+	            
+	            return search;
+	            
+	        } else {
+	            
+	            Node returnNode = findNode(search.leftChild, node);
+	            
+	            if (returnNode == null) {
+	                
+	                returnNode = findNode(search.rightChild, node);
+	                
+	            }
+	            
+	            return returnNode;
+	        }
+	    }
+		
+		
 	    
 	    
 	    
